@@ -13,7 +13,7 @@ class _Loginscreen extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(
       title: Text("Login Page"),
-      
+      centerTitle: true,
     ),);
   }
 }
