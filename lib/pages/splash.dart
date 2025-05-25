@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './home.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -8,6 +9,17 @@ class Splash extends StatefulWidget {
 }
 
 class _Splashscreen extends State<Splash> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Center(child: CircularProgressIndicator()));
