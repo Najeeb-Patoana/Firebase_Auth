@@ -1,3 +1,4 @@
+import 'package:firebase_app/pages/toast.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -16,10 +17,15 @@ class _Signupscreen extends State<Signup> {
   Future<void> _signup() async {
     var auth = FirebaseAuth.instance;
 
-    auth.createUserWithEmailAndPassword(
-      email: _email.text.trim(),
-      password: _password.text.trim(),
-    );
+    if (_formkey.currentState!.validate()) {
+      auth
+          .createUserWithEmailAndPassword(
+            email: _email.text.trim(),
+            password: _password.text.trim(),
+          )
+          .then((value) => Toast(value.toString()))
+          .onError((error, stackTrace) => Toast(error.toString()));
+    }
   }
 
   @override
@@ -37,14 +43,24 @@ class _Signupscreen extends State<Signup> {
                 TextFormField(
                   controller: _email,
                   decoration: InputDecoration(label: Text("Enter the Email")),
+                  validator: (value) {
+                    if (value == '' || value == null) {
+                      return "Email cant be empty";
+                    }
+                  },
                 ),
                 SizedBox(height: 20),
                 TextFormField(
                   controller: _password,
                   decoration: InputDecoration(labelText: "Enter the Password"),
+                  validator: (value) {
+                    if (value == '' || value == null) {
+                      return "password cant be empty";
+                    }
+                  },
                 ),
                 SizedBox(height: 20),
-                ElevatedButton(onPressed: () {}, child: Text("Signup")),
+                ElevatedButton(onPressed: _signup, child: Text("Signup")),
               ],
             ),
           ),
