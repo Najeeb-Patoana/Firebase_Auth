@@ -1,6 +1,6 @@
 import 'package:firebase_app/pages/signup.dart';
 import 'package:flutter/material.dart';
-import './login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
