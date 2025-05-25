@@ -9,28 +9,34 @@ class Login extends StatefulWidget {
 
 class _Loginscreen extends State<Login> {
   final _formkey = GlobalKey<FormState>();
-  final TextEditingController _email=TextEditingController();
-  final TextEditingController _password=TextEditingController();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _password = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Login Page"), centerTitle: true),
-      body: Form(
-        key: _formkey,
-      child: Container(
-        height: 650,
-        width: 330,
-        color: Colors.grey,
-        child: Column(
-          children: [
-            TextFormField(controller: _email,),
-            TextFormField(controller: _password,),
-          
-          ]
-          )
-          )
+      body: Padding(
+        padding: EdgeInsets.symmetric(),
+        child: Form(
+          key: _formkey,
+          child: Center(
+            child: Column(
+              children: [
+                TextFormField(
+                  controller: _email,
+                  decoration: InputDecoration(label: Text("Enter the Email")),
+                ),
+                SizedBox(height: 50),
+                TextFormField(
+                  controller: _password,
+                  decoration: InputDecoration(labelText: "Enter the Password"),
+                ),
+              ],
+            ),
           ),
+        ),
+      ),
     );
   }
 }
