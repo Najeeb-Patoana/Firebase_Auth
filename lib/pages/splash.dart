@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './home.dart';
+import './login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -15,7 +16,7 @@ class _Splashscreen extends State<Splash> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Home()),
+        MaterialPageRoute(builder: (context) => Login()),
       );
     });
   }
