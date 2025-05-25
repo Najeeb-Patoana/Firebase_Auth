@@ -35,7 +35,7 @@ class _Loginscreen extends State<Login> {
                   decoration: InputDecoration(labelText: "Enter the Password"),
                 ),
                 SizedBox(height: 20),
-                ElevatedButton(onPressed: () {}, child: Text("Submit")),
+                ElevatedButton(onPressed: () {}, child: Text("Login")),
               ],
             ),
           ),
