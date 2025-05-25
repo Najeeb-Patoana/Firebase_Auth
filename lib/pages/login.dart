@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -23,15 +24,18 @@ class _Loginscreen extends State<Login> {
           child: Center(
             child: Column(
               children: [
+                SizedBox(height: 50),
                 TextFormField(
                   controller: _email,
                   decoration: InputDecoration(label: Text("Enter the Email")),
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: 20),
                 TextFormField(
                   controller: _password,
                   decoration: InputDecoration(labelText: "Enter the Password"),
                 ),
+                SizedBox(height: 20),
+                ElevatedButton(onPressed: () {}, child: Text("Submit")),
               ],
             ),
           ),
