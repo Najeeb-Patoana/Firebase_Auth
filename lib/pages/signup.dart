@@ -13,6 +13,15 @@ class _Signupscreen extends State<Signup> {
   final TextEditingController _email = TextEditingController();
   final TextEditingController _password = TextEditingController();
 
+  Future<void> _signup() async {
+    var auth = FirebaseAuth.instance;
+
+    auth.createUserWithEmailAndPassword(
+      email: _email.text.trim(),
+      password: _password.text.trim(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

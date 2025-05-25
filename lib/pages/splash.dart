@@ -1,3 +1,4 @@
+import 'package:firebase_app/pages/signup.dart';
 import 'package:flutter/material.dart';
 import './login.dart';
 
@@ -15,7 +16,7 @@ class _Splashscreen extends State<Splash> {
     Future.delayed(Duration(seconds: 2), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Login()),
+        MaterialPageRoute(builder: (context) => Signup()),
       );
     });
   }
